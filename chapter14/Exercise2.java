@@ -1,5 +1,8 @@
 import java.util.Scanner;
+<<<<<<< HEAD
 
+=======
+>>>>>>> b17d0b7a553a0bae519f5fa7ccc540358ae54fda
 public class Exercise2 {
     public static void main(String[] args) {
         double p;
