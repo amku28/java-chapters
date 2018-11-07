@@ -2,8 +2,8 @@ class Jam
 {
   // Instance Variables
   private String contents ;   // type of fruit in the jar
-  public String date  ;      // date of canning
-  public int capacity ;      // amount of jam in the jar
+  private String date  ;      // date of canning
+  private int capacity ;      // amount of jam in the jar
 
 
   // Constructors
@@ -12,6 +12,15 @@ class Jam
     this . contents = contents  ;
     this . date = date ;
     capacity = size;
+  }
+
+  // Getters
+  public String getDate() {
+    return this.date;
+  }
+
+  public int getCapacity() {
+    return capacity;
   }
 
   // Methods
