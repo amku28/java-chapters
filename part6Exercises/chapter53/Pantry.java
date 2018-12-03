@@ -84,8 +84,8 @@ class Pantry
   }
 
   public void mixedFruit() {
-    if (jar1.capacity <= 2 && jar2.capacity <= 2 && jar3.capacity <= 2) {
-      Jam mixed = new Jam("Mixed Fruit", jar1.date, jar1.capacity + jar2.capacity + jar3.capacity);
+    if (jar1.getCapacity() <= 2 && jar2.getCapacity() <= 2 && jar3.getCapacity() <= 2) {
+      Jam mixed = new Jam("Mixed Fruit", jar1.getDate(), jar1.getCapacity() + jar2.getCapacity() + jar3.getCapacity());
       jar2 = null;
       jar3 = null;
       jar1 = mixed;
