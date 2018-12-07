@@ -16,7 +16,7 @@ public class Exercise1
         System.out.print("First Name? ");
         String firstName = scan.nextLine();
 
-        PhoneEntry entry = pb.search( lastName ); 
+        PhoneEntry entry = pb.search( lastName, firstName ); 
             
         if ( entry != null && firstName.length() > 0) {
           System.out.println( "The number is: " + entry.getPhone() );
@@ -36,7 +36,6 @@ class PhoneEntry
 {
   private String firstName;
   private String lastName;
-  private String name = firstName + " " + lastName;
   private String phone;   // their phone number
 
   public PhoneEntry( String lN, String fN, String p )
@@ -44,7 +43,7 @@ class PhoneEntry
     lastName = lN; firstName = fN; phone = p;
   }
   
-  public String getName()  {return lastName;}
+  public String getLastName()  {return lastName;}
   public String getFirstName() {return firstName;}
   public String getPhone() {return phone;}
   
@@ -68,28 +67,21 @@ class PhoneBook
 
   }
 
-  public PhoneEntry search( String targetName )  
+  public PhoneEntry search( String targetLastName, String targetFirstName )  
   {
     for ( int j=0; j < phoneBook.length; j++ )
     {
-      if ( phoneBook[ j] != null && phoneBook[ j ].getName().toUpperCase().equals( targetName.toUpperCase() ) )
+      if ( phoneBook[ j] != null && phoneBook[ j ].getLastName().toUpperCase().equals( targetLastName.toUpperCase() ) 
+        && phoneBook[ j ].getFirstName().toUpperCase().equals( targetFirstName.toUpperCase() ) ) {
         return phoneBook[ j ];
-    }
+        } else if (phoneBook[j] != null && phoneBook[ j ].getLastName().toUpperCase().equals( targetLastName.toUpperCase())
+                     && phoneBook[ j ].getFirstName().equals("") ) {
+                      return phoneBook[j];
+        }
+    } 
 
     return null;
   }
-
-  // public void findCell() {
-  //   for (int i = 0; i < phoneBook.length; i++) {
-  //     if (phoneBook[i] == null) {
-  //       phoneBook[i] ;
-  //     } 
-  //   }
-  // }
-
-  // public void deleteEntry() {
-  //   phoneBook[findCell()] = null;
-  // }
 }
 
 
